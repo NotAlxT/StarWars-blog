@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 import { get_characters, get_planets } from "../swapi"
 import Character from "./character"
 
-export const Home() {
+export const Home() => {
     let [characters, setCharacters] = useState()
     
     useEffect(()=>{
@@ -14,11 +14,12 @@ export const Home() {
         set()
     },[])
 
-    return( <div> {characters?.map((character) => {
+    return( 
+    <div> {characters?.map((character) => {
         return<h1>{characters.name}</h1>
-        </div>
-    
-    })}
-    
+     }
+    )}
+    </div>
     )
+    
 }
